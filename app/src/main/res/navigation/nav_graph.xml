@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_dashboard">
+
+    <!-- Tela Dashboard -->
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.oliveira.minhacaixa.DashboardFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <!-- Tela Lista de Produtos -->
+    <fragment
+        android:id="@+id/navigation_products"
+        android:name="com.oliveira.minhacaixa.ProductListFragment"
+        android:label="Meus Produtos"
+        tools:layout="@layout/fragment_product_list">
+        <!-- A action local foi removida daqui -->
+    </fragment>
+
+    <!-- Tela Adicionar/Editar -->
+    <fragment
+        android:id="@+id/addEditProductFragment"
+        android:name="com.oliveira.minhacaixa.AddEditProductFragment"
+        android:label="Adicionar/Editar Produto"
+        tools:layout="@layout/fragment_add_edit_product" >
+        <argument
+            android:name="productId"
+            app:argType="long"
+            android:defaultValue="-1L" />
+    </fragment>
+
+    <!-- Tela Nova Venda -->
+    <fragment
+        android:id="@+id/navigation_sale"
+        android:name="com.oliveira.minhacaixa.NewSaleFragment"
+        android:label="Nova Venda"
+        tools:layout="@layout/fragment_new_sale" />
+
+    <!-- Tela Relatórios -->
+    <fragment
+        android:id="@+id/navigation_reports"
+        android:name="com.oliveira.minhacaixa.ReportsFragment"
+        android:label="Relatórios"
+        tools:layout="@layout/fragment_reports" />
+
+    <!-- ======================================================= -->
+    <!--     AÇÃO GLOBAL PARA ABRIR A TELA DE ADICIONAR/EDITAR   -->
+    <!-- ======================================================= -->
+    <action
+        android:id="@+id/action_global_to_addEditProduct"
+        app:destination="@id/addEditProductFragment" />
+
+</navigation>

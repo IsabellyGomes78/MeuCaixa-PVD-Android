@@ -3,58 +3,100 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/navigation_dashboard">
+    app:startDestination="@id/welcomeFragment">
 
-    <!-- Tela Dashboard (Início) -->
+    <!-- Telas de Autenticação -->
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.oliveira.minhacaixa.DashboardFragment"
-        android:label="Início"
-        tools:layout="@layout/fragment_dashboard" />
-
-    <!-- Tela Lista de Produtos -->
-    <fragment
-        android:id="@+id/navigation_products"
-        android:name="com.oliveira.minhacaixa.ProductListFragment"
-        android:label="Meus Produtos"
-        tools:layout="@layout/fragment_product_list" />
-
-    <!-- Tela Adicionar/Editar -->
-    <fragment
-        android:id="@+id/addEditProductFragment"
-        android:name="com.oliveira.minhacaixa.AddEditProductFragment"
-        android:label="Adicionar/Editar Produto"
-        tools:layout="@layout/fragment_add_edit_product">
-        <argument
-            android:name="productId"
-            app:argType="long"
-            android:defaultValue="-1L" />
+        android:id="@+id/welcomeFragment"
+        android:name="com.oliveira.meucaixa.WelcomeFragment"
+        android:label="Bem-Vindo(a)"
+        tools:layout="@layout/fragment_welcome">
+        <action
+            android:id="@+id/action_welcomeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
     </fragment>
 
-    <!-- Tela Nova Venda -->
     <fragment
-        android:id="@+id/navigation_sale"
-        android:name="com.oliveira.minhacaixa.NewSaleFragment"
-        android:label="Nova Venda"
-        tools:layout="@layout/fragment_new_sale" />
+        android:id="@+id/signUpFragment"
+        android:name="com.oliveira.meucaixa.SignUpFragment"
+        android:label="Inscrever-se"
+        tools:layout="@layout/fragment_signup">
+        <action
+            android:id="@+id/action_signUpFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/welcomeFragment" />
+    </fragment>
 
-    <!-- Tela Relatórios -->
     <fragment
-        android:id="@+id/navigation_reports"
-        android:name="com.oliveira.minhacaixa.ReportsFragment"
-        android:label="Relatórios"
-        tools:layout="@layout/fragment_reports" />
+        android:id="@+id/loginFragment"
+        android:name="com.oliveira.meucaixa.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <argument
+            android:name="registeredUserName"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_loginFragment_to_main_app"
+            app:destination="@id/main_app_nav_graph"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
 
-    <!-- Ação Global para Adicionar/Editar Produto -->
-    <action
-        android:id="@+id/action_global_to_addEditProduct"
-        app:destination="@id/addEditProductFragment" />
+    <!-- Gráfico de Navegação Principal -->
+    <navigation
+        android:id="@+id/main_app_nav_graph"
+        app:startDestination="@id/navigation_dashboard">
 
-    <!-- CORREÇÃO: Ação para voltar ao Início de forma limpa -->
-    <action
-        android:id="@+id/action_global_to_dashboard"
-        app:destination="@id/navigation_dashboard"
-        app:popUpTo="@id/nav_graph"
-        app:popUpToInclusive="true" />
+        <fragment
+            android:id="@+id/navigation_dashboard"
+            android:name="com.oliveira.meucaixa.DashboardFragment"
+            android:label="Início"
+            tools:layout="@layout/fragment_dashboard" />
+
+        <fragment
+            android:id="@+id/navigation_products"
+            android:name="com.oliveira.meucaixa.ProductListFragment"
+            android:label="Meus Produtos"
+            tools:layout="@layout/fragment_product_list" />
+
+        <fragment
+            android:id="@+id/addEditProductFragment"
+            android:name="com.oliveira.meucaixa.AddEditProductFragment"
+            android:label="Adicionar/Editar Produto"
+            tools:layout="@layout/fragment_add_edit_product">
+            <argument
+                android:name="productId"
+                app:argType="long"
+                android:defaultValue="-1L" />
+        </fragment>
+
+        <fragment
+            android:id="@+id/navigation_sale"
+            android:name="com.oliveira.meucaixa.NewSaleFragment"
+            android:label="Nova Venda"
+            tools:layout="@layout/fragment_new_sale" />
+
+        <fragment
+            android:id="@+id/navigation_reports"
+            android:name="com.oliveira.meucaixa.ReportsFragment"
+            android:label="Relatórios"
+            tools:layout="@layout/fragment_reports" />
+
+        <action
+            android:id="@+id/action_global_to_addEditProduct"
+            app:destination="@id/addEditProductFragment" />
+
+        <action
+            android:id="@+id/action_main_app_to_dashboard"
+            app:destination="@id/navigation_dashboard"
+            app:popUpTo="@id/main_app_nav_graph"
+            app:popUpToInclusive="true" />
+
+    </navigation>
 
 </navigation>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface"
+    tools:context=".SignUpFragment">
+
+    <TextView
+        android:id="@+id/text_title_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inscrever-se"
+        android:textColor="?attr/colorOnSurface"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="64dp" />
+
+    <EditText
+        android:id="@+id/edit_text_name_signup"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:hint="Nome Completo"
+        android:inputType="textPersonName|textCapWords"
+        android:background="?attr/editTextBackground"
+        android:textColor="?attr/colorOnSurface"
+        app:layout_constraintTop_toBottomOf="@+id/text_title_signup"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="32dp"
+        android:paddingHorizontal="20dp"/>
+
+    <EditText
+        android:id="@+id/edit_text_dob_signup"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:hint="Data de Nascimento (DD/MM/AAAA)"
+        android:inputType="date"
+        android:background="?attr/editTextBackground"
+        android:textColor="?attr/colorOnSurface"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_name_signup"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="16dp"
+        android:paddingHorizontal="20dp"/>
+
+    <Button
+        android:id="@+id/button_confirm_signup"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="Confirmar Inscrição"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginBottom="64dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

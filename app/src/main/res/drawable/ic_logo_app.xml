@@ -1,0 +1,58 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="240dp"
+    android:height="240dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Grupo para aplicar o contorno verde e preenchimento branco em tudo -->
+    <group>
+        <!-- Base da Caixa Registradora com Gaveta -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:strokeColor="#22C55E"
+            android:strokeWidth="1.5"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round"
+            android:pathData="M3,17 h18 v4 h-18 z M7,19 h10" />
+
+        <!-- Corpo Principal (Teclado) -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:strokeColor="#22C55E"
+            android:strokeWidth="1.5"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round"
+            android:pathData="M5,17 L7,8 h10 l2,9 z" />
+
+        <!-- Detalhes do Teclado (Linhas internas) -->
+        <path
+            android:strokeColor="#22C55E"
+            android:strokeWidth="1.5"
+            android:strokeLineCap="round"
+            android:pathData="M9,11 h6 M9,14 h6" />
+
+        <!-- Haste e Tela (Display) -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:strokeColor="#22C55E"
+            android:strokeWidth="1.5"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round"
+            android:pathData="M10,8 v-2 M14,8 v-2 M8,3 h8 v3 h-8 z" />
+
+        <!-- Conteúdo da Tela (Rabisco/Cifrão) -->
+        <path
+            android:strokeColor="#22C55E"
+            android:strokeWidth="1.5"
+            android:strokeLineCap="round"
+            android:pathData="M11,4.5 h2" />
+
+        <!-- Papel/Recibo no topo -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:strokeColor="#22C55E"
+            android:strokeWidth="1.5"
+            android:strokeLineCap="round"
+            android:pathData="M10,3 Q10,1 12,1 Q14,1 14,3" />
+    </group>
+</vector>

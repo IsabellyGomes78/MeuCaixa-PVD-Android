@@ -9,10 +9,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MinhaCaixa"
+        android:theme="@style/Theme.MeuCaixa" 
         tools:targetApi="31">
 
-        <!-- CORREÇÃO: Garantindo que a declaração da MainActivity está explícita e correta -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
